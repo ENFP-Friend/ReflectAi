@@ -1,0 +1,34 @@
+{
+  "agents": [
+    {
+      "name": "ImageryEnhancer",
+      "path": "agents/ImageryEnhancer/ImageryEnhancer.py",
+      "gpt_version": "gpt-4",
+      "description": "Detects abstract or conceptual passages and enriches them with concrete sensory descriptions—sight, sound, texture, motion—for vividness."
+    },
+    {
+      "name": "ConceptReframer",
+      "path": "agents/ConceptReframer/ConceptReframer.py",
+      "gpt_version": "gpt-4-turbo",
+      "description": "Reconstructs the central ideas of the text through different philosophical, cultural, or ideological lenses (e.g., Marxist, Stoic, Systems Thinking, Nietzschean)."
+    },
+    {
+      "name": "PersonaImprinter",
+      "path": "agents/PersonaImprinter/PersonaImprinter.py",
+      "gpt_version": "gpt-4",
+      "description": "Applies the voice, worldview, and speaking style of a specific character, historical figure, or archetype (e.g., a war general, Zen monk, tech futurist)."
+    },
+    {
+      "name": "MarkdownLogger",
+      "path": "agents/MarkdownLogger/MarkdownLogger.py",
+      "gpt_version": "n/a",
+      "description": "Logs the initial input and all agent outputs to a Markdown file."
+    }
+  ],
+  "execution_order": [
+    "ImageryEnhancer",
+    "ConceptReframer",
+    "PersonaImprinter",
+    "MarkdownLogger"
+  ]
+}
