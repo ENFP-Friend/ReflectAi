@@ -2,5 +2,6 @@
 .env
 __pycache__/
 *.pyc
-notes.txt
 pipeline_logs/
+Obsidian_ReflectAI/Docs/myNotes
+Obsidian_ReflectAi/.obsidian/

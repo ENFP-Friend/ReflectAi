@@ -40,17 +40,13 @@ def log_run_to_markdown(initial_input: str,
         markdown_content += f"```\n{output_text}\n```\n\n"
         markdown_content += "---\n\n"
         
-    # The last step in pipeline_steps is the final output of the "normal" agents
-    # If MarkdownLogger is the *only* thing that ran after initial input (unlikely but possible)
-    # then pipeline_steps might be empty if not handled carefully in run_pipeline.py
-    if pipeline_steps:
-        final_text_before_logging = pipeline_steps[-1]['output_text']
-        markdown_content += f"## Final Text Processed by Pipeline (before logging)\n\n"
-        markdown_content += f"```\n{final_text_before_logging}\n```\n\n"
+    # Removed the redundant "Final Text Processed by Pipeline" section.
+    # The output of the last agent in the loop above is effectively the final text.
 
-    logs_dir = "pipeline_logs"
+    # Updated logs directory to be inside Obsidian_ReflectAI
+    logs_dir = os.path.join("Obsidian_ReflectAI", "pipeline_logs")
     if not os.path.exists(logs_dir):
-        os.makedirs(logs_dir)
+        os.makedirs(logs_dir, exist_ok=True) # exist_ok=True prevents error if dir exists
         
     full_log_path = os.path.join(logs_dir, log_filename)
 
