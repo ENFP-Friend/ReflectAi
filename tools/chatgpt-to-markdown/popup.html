@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT to Markdown</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 250px;
+      padding: 10px;
+    }
+    label, input, button {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="text"] {
+      width: calc(100% - 10px);
+    }
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <label for="filename">Filename (e.g., My Topic):</label>
+  <input type="text" id="filename" value="NewTopic">
+  <button id="saveButton">Save as Markdown</button>
+  <p id="status" style="font-size: 0.9em;"></p>
+  <script src="turndown.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
